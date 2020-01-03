@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/Wenyan-CTF`,
   siteMetadata: {
     title: "Gatsby Starter - Stellar by HTML5 UP",
     author: "Hunter Chang",
