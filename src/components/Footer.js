@@ -3,6 +3,7 @@ import React from 'react'
 
 const Footer = props => (
   <footer id="footer">
+    {/*
     <section>
       <h2>Aliquam sed mauris</h2>
       <p>
@@ -18,19 +19,22 @@ const Footer = props => (
           </Link>
         </li>
       </ul>
-    </section>
+    </section>*/}
+    
     <section>
-      <h2>Etiam feugiat</h2>
+      <h2>Contact</h2>
       <dl className="alt">
         <dt>Address</dt>
-        <dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+        <dd>No. 1, Sec. 4, Roosevelt Road, Taipei, 10617 Taiwan(R.O.C)</dd>
+        {/*
         <dt>Phone</dt>
-        <dd>(000) 000-0000 x 0000</dd>
+        <dd>(000) 000-0000 x 0000</dd>*/}
         <dt>Email</dt>
         <dd>
-          <a href="https://codebushi.com">information@untitled.tld</a>
+          <a href="https://codebushi.com">byronhsu1230@gmail.com</a>
         </dd>
       </dl>
+      {/*
       <ul className="icons">
         <li>
           <a
@@ -63,7 +67,7 @@ const Footer = props => (
             <span className="label">Dribbble</span>
           </a>
         </li>
-      </ul>
+      </ul>*/}
     </section>
     <p className="copyright">
       &copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.

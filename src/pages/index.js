@@ -13,7 +13,10 @@ class Index extends React.Component {
     super(props)
     this.state = {
       stickyNav: false,
+      text: ''
     }
+    this._handleOnChange = this._handleOnChange.bind(this)
+    this._handleOnClick = this._handleOnClick.bind(this)
   }
 
   _handleWaypointEnter = () => {
@@ -23,11 +26,20 @@ class Index extends React.Component {
   _handleWaypointLeave = () => {
     this.setState(() => ({ stickyNav: true }))
   }
-
+  _handleOnChange = (event) => {
+    let text = event.target.value
+    this.setState({text})
+  }
+  _handleOnClick = () => {
+    if(this.state.text == "nmlab_is_great")
+        alert("Success! NMLAB is the best!!")
+    else
+        alert("Wrong!")
+  }
   render() {
     return (
       <Layout>
-        <Helmet title="Gatsby Starter - Stellar" />
+        <Helmet title="Wenyan-CTF" />
 
         <Header />
 
@@ -38,30 +50,58 @@ class Index extends React.Component {
         <Nav sticky={this.state.stickyNav} />
 
         <div id="main">
+          {/* Problem */}
           <section id="intro" className="main">
             <div className="spotlight">
               <div className="content">
                 <header className="major">
-                  <h2>Preface</h2>
+                  <h2>Problem</h2>
                 </header>
-                <p>
-                    夫唐、虞之世，結繩而足治，屈指而足算。是時豈料百代之後，計算機械之巧，精於公輸之木鳶，善於武侯之流馬；程式語言之多，繁若《天官》之星宿，奇勝《山經》之走獸。鼠、蟹、鑽、魚，或以速稱。蛇、象、駱、犀，各爭文采。方知鬼之所以夜哭，天之所以雨粟。然以文言編程者 ，似所未有。此誠非文脈之所以傳，文心之所以保。嗟予小子，遂有斯志。然則數寸之烏絲猶覆於頭，萬卷之素書未破於手；一身長羈於遠邦，兩耳久曠于雅言。然夫文章者吾之所宿好，程式者偶承時人之謬譽。故希孟不慚年少，莊生不望無涯。乃作斯言。誠未能嘔瀝長吉之心血，亦庶幾免於義山之流沫。既成之後，復學干將鑄劍而自飼，越王嚐糞而當先。自謂偶追《十書》之筆意，但恨少八家之淋漓。此子山所謂士衡撫掌而甘心，平子見陋而固宜。然則雖實覆甕之質，尚存斧正之望；雖乏呂相之金，易字之渴蓋同。此亦開源之大義，吾輩之所以勉勵也。一笑。
+                <p style={{fontWeight: 'bold'}}>
+                敘述：給你一段<a href="https://github.com/LingDong-/wenyan-lang">wenyan-lang</a>的程式碼，以及其output，你必須理解wenyan-lang的語法，才能從中找出flag。
                 </p>
-                {/*
-                <ul className="actions">
-                  <li>
-                    <Link to="/generic" className="button">
-                      Learn More
-                    </Link>
-                  </li>
-                </ul>*/}
+                <p style={{fontStyle: 'italic', fontSize: '14px'}}>
+                吾有一列。名之曰「旗子」。<br/>
+                <br/>
+                充「旗子」以「你猜」。<br/>
+                <br/>
+                吾有一列。名之曰「結果」。 <br/>
+                吾有一數。曰零。名之曰「哀」。 <br/>
+                <br/>
+                恆為是。<br/>
+                加「哀」以一。名之曰「哀」。<br/>
+                夫「旗子」之「哀」。名之曰「暫之一」。<br/>
+                乘「暫之一」以二。減其以三。名之曰「暫之二」。<br/>
+                充「結果」以「暫之二」。<br/>
+                若「哀」大於十三者。乃止。云云。<br/>
+                云云。<br/>
+                <br/>
+                凡「結果」中之「甲」。<br/>
+                吾有一數。曰「甲」。書之。<br/>
+                云云。<br/>
+                </p>
+                <p>
+                Output: <br/>
+                110
+                109
+                108
+                97
+                98
+                95
+                105
+                115
+                95
+                103
+                114
+                101
+                97
+                116
+                </p>
               </div>
-              <span className="image">
-                <img src={pic01} alt="" />
-              </span>
             </div>
           </section>
-
+          {/* Requirement */}
+          {/*
           <section id="first" className="main special">
             <header className="major">
               <h2>Requirement</h2>
@@ -101,9 +141,10 @@ class Index extends React.Component {
                   </Link>
                 </li>
               </ul>
-            </footer>*/}
-          </section>
-
+            </footer>
+            </section>*/}
+            {/* Problem */}
+        {/*
           <section id="second" className="main special">
             <header className="major">
               <h2>Problem</h2>
@@ -113,29 +154,6 @@ class Index extends React.Component {
                 posuere. Nulla massa urna, fermentum eget quam aliquet.
               </p>
             </header>
-            {/*
-            <ul className="statistics">
-              <li className="style1">
-                <span className="icon fa-code-fork"></span>
-                <strong>5,120</strong> Etiam
-              </li>
-              <li className="style2">
-                <span className="icon fa-folder-open-o"></span>
-                <strong>8,192</strong> Magna
-              </li>
-              <li className="style3">
-                <span className="icon fa-signal"></span>
-                <strong>2,048</strong> Tempus
-              </li>
-              <li className="style4">
-                <span className="icon fa-laptop"></span>
-                <strong>4,096</strong> Aliquam
-              </li>
-              <li className="style5">
-                <span className="icon fa-diamond"></span>
-                <strong>1,024</strong> Nullam
-              </li>
-            </ul>*/}
             <img src={problem} alt="" style={{width: '100%'}}/>
             <p className="content">
               Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl
@@ -149,32 +167,22 @@ class Index extends React.Component {
               scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras
               eu ornare dui curabitur lacinia.
             </p>
-            {/*
-            <footer className="major">
-              <ul className="actions">
-                <li>
-                  <Link to="/generic" className="button">
-                    Learn More
-                  </Link>
-                </li>
-              </ul>
-            </footer>*/}
-          </section>
+        </section> */}
 
           <section id="cta" className="main special">
             <header className="major">
               <h2>Submit</h2>
-              <p>
-                Donec imperdiet consequat consequat. Suspendisse feugiat congue
-                <br />
-                posuere. Nulla massa urna, fermentum eget quam aliquet.
-              </p>
-              <input style={{width: '80%'}}></input>
             </header>
+            <p>
+                把你找到的Flag輸入在底下看看結果如何！
+            </p>
+            <form>
+                <input type="text" onChange={this._handleOnChange}></input>
+            </form>
             <footer className="major">
               <ul className="actions">
                 <li>
-                  <Link to="/generic" className="button special">
+                  <Link className="button special" onClick={this._handleOnClick}>
                     Submit
                   </Link>
                 </li>
@@ -186,6 +194,22 @@ class Index extends React.Component {
                 </li>*/}
               </ul>
             </footer>
+          </section>
+          {/* Hint */}
+          <section id="hint" className="main">
+            <div className="spotlight">
+              <div className="content">
+                <header className="major">
+                  <h2>Hint</h2>
+                </header>
+                <p>
+                <ol>
+                    <li>將古文依據reference轉成你所熟悉的語言</li>
+                    <li>直接跑那段程式碼會無法執行，因為要把「你猜」代換為某個序列 </li>
+                </ol>
+                </p>
+              </div>
+            </div>
           </section>
         </div>
       </Layout>
