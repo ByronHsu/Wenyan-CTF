@@ -27,20 +27,24 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-28c608b8023184be0c1f.js"
+    "url": "webpack-runtime-7d98c4cc51ba96fcf90a.js"
   },
   {
     "url": "commons-3ded50d50f59920c9f65.js"
   },
   {
-    "url": "app-82c7f3f0e0ffe11dd28b.js"
+    "url": "app-1f1358ebe695059dd8bb.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-c5f58849c2f4732d93c1.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "a4f0807e6f5cfc91d3dec23039eb75df"
+    "revision": "2e8088f7312d82f0f801714682252674"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "c355c8040c47a63bfb3360e4b7cb6553"
   },
   {
     "url": "manifest.webmanifest",
@@ -132,12 +136,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/Wenyan-CTF`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-82c7f3f0e0ffe11dd28b.js`))) {
+  if (!resources || !(await caches.match(`/Wenyan-CTF/app-1f1358ebe695059dd8bb.js`))) {
     return await fetch(event.request)
   }
 
@@ -150,7 +154,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/Wenyan-CTF/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
