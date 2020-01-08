@@ -60,7 +60,7 @@ class Index extends React.Component {
                 <p style={{fontWeight: 'bold'}}>
                 敘述：給你一段<a href="https://github.com/LingDong-/wenyan-lang">wenyan-lang</a>的程式碼，以及其output，你必須理解wenyan-lang的語法，才能從中找出flag。
                 </p>
-                <p style={{fontStyle: 'italic', fontSize: '14px'}}>
+                <p style={{fontStyle: 'italic', fontSize: '14px', writingMode: 'vertical-rl', margin: '0 auto'}}>
                 吾有一列。名之曰「旗子」。<br/>
                 <br/>
                 充「旗子」以「你猜」。<br/>
@@ -84,6 +84,7 @@ class Index extends React.Component {
                 Output: <br/>
                 110
                 109
+
                 108
                 97
                 98

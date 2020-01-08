@@ -175,7 +175,8 @@
 		&.alt {
 			dt {
 				display: block;
-				width: 3em;
+                // width: 3em;
+                padding-right: 1em;
 				margin: 0;
 				clear: left;
 				float: left;

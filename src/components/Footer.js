@@ -31,7 +31,15 @@ const Footer = props => (
         <dd>(000) 000-0000 x 0000</dd>*/}
         <dt>Email</dt>
         <dd>
-          <a href="https://codebushi.com">byronhsu1230@gmail.com</a>
+          <a>byronhsu1230@gmail.com</a>
+        </dd>
+        <dt>Problem Design</dt>
+        <dd>
+            <a href="https://github.com/shenperson">shenperson</a> <a href="https://github.com/tzyLee">tzyLee</a>
+        </dd>
+        <dt>Web development</dt>
+        <dd>
+            <a href="https://github.com/ByronHsu">ByronHsu</a> 
         </dd>
       </dl>
       {/*
